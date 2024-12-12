@@ -4,7 +4,7 @@ const { tutorialServices } = require("./tutorial.service");
 const tutorialAdd = async (req, res, next) => {
     try {
         const tutorial = req.body;
-        const result = await tutorialServices.lessonAddToDb(tutorial)
+        const result = await tutorialServices.tutorialAddToDb(tutorial)
         if (result) {
             res.status(200).json({
                 success: true,
