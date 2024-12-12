@@ -8,7 +8,7 @@ const router = Router();
 router.post('/add', [verifyAuth, verifyAdmin], lessonControllers.lessonAdd);
 router.patch('/:lessonId', [verifyAuth, verifyAdmin], lessonControllers.lessonUpdate);
 router.delete('/:lessonId', [verifyAuth, verifyAdmin], lessonControllers.deleteLesson);
-router.get('/', lessonControllers.getAllLesson);
+router.get('/', verifyAuth, lessonControllers.getAllLesson);
 
 
 
