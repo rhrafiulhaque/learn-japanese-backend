@@ -329,7 +329,9 @@ Errors are handled through AppError. Common error responses include:
 
 # Example Error Response
 
+```json
 {
-"status": "error",
-"message": "Lesson name already exists"
+  "status": "error",
+  "message": "Lesson name already exists"
 }
+```
