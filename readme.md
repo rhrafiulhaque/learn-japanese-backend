@@ -35,9 +35,7 @@ POST /auth/register
  POST /auth/refresh-token
 ```
 
-# Routes
-
-1. Lessons
+1. **Lessons**
 
 Manage lessons (add, update, delete, retrieve).
 
@@ -49,25 +47,23 @@ POST /lessons/add
 
 - **Required Body:**
 
-```
+```json
 {
   "lessonName": "Lesson Name",
   "lessonNumber": 1
 }
-
 ```
 
 - Authentication: Admin only
 - Response:
 
-```
+```json
 {
   "lessonName": "Lesson Name",
   "lessonNumber": 1,
   "createdAt": "timestamp",
   "updatedAt": "timestamp"
 }
-
 ```
 
 ```
@@ -102,8 +98,7 @@ GET /lessons
 - **Description:** Get all lessons.
 - **Authentication:** Admin and User
 
-2. Tutorials
-   Manage tutorials (add, update, delete, retrieve).
+2. **Tutorials Manage tutorials (add, update, delete, retrieve).**
 
 ```
 POST /tutorials/add
@@ -139,8 +134,6 @@ PATCH /tutorials/:tutorialId
 
 - Authentication: Admin only
 
-### 1. Tutorials
-
 #### **DELETE /tutorials/:tutorialId**
 
 - **Description**: Delete a tutorial by its ID.
@@ -174,10 +167,6 @@ Manage vocabulary items (add, update, delete, retrieve).
 ```
 
 - Authentication: Admin only
-
-### 1. Vocabulary
-
-Manage vocabulary items (add, update, delete, retrieve).
 
 #### **PATCH /vocabulary/:vocId**
 
