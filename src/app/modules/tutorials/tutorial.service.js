@@ -50,6 +50,14 @@ const getAllTutorialsFromDb = async () => {
     return tutorials
 
 }
+const getTutorialByIdFromDb = async (tutorialId) => {
+    const tutorialExist = await Tutorial.findOne({ _id: tutorialId });
+    if (!tutorialExist) {
+        throw new AppError(404, "Tutorial not found");
+    }
+    return tutorialExist
+
+}
 
 const deleteTutorialFromDb = async (tutorialId) => {
     const tutorialExist = await Tutorial.findOne({ _id: tutorialId });
@@ -72,6 +80,7 @@ module.exports = {
         tutorialUpdateToDb,
         getAllTutorialsFromDb,
         deleteTutorialFromDb,
+        getTutorialByIdFromDb
 
     }
 }

@@ -38,6 +38,20 @@ const getAllTutorial = async (req, res, next) => {
         const result = await tutorialServices.getAllTutorialsFromDb();
         res.status(200).json({
             success: true,
+            message: "Tutorials retrive successfully",
+            data: result,
+        });
+
+    } catch (error) {
+        next(error)
+    }
+}
+const getTutorialById = async (req, res, next) => {
+    const { tutorialId } = req.params;
+    try {
+        const result = await tutorialServices.getTutorialByIdFromDb(tutorialId);
+        res.status(200).json({
+            success: true,
             message: "Tutorial retrive successfully",
             data: result,
         });
@@ -69,5 +83,6 @@ module.exports = {
         tutorialUpdate,
         getAllTutorial,
         deleteTutorial,
+        getTutorialById
     }
 }
