@@ -242,7 +242,7 @@ POST /auth/login
 - Description: Login a user and get JWT tokens.
 - Required Body:
 
-```josn
+```json
 {
   "email": "user@example.com",
   "password": "password"
